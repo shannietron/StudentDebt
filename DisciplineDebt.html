@@ -14983,7 +14983,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -15012,7 +15012,7 @@ div#notebook {
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="4282">Loading BokehJS ...</span>
+        <span id="1001">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -15026,10 +15026,10 @@ div#notebook {
 
 
 
-<div id="b353b9ea-dbc9-44c4-ab42-1724e8ad2520"></div>
+<div id="55eb0173-3dfd-4bfc-8639-87b078b16edf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b353b9ea-dbc9-44c4-ab42-1724e8ad2520');
+var element = $('#55eb0173-3dfd-4bfc-8639-87b078b16edf');
 
 (function(root) {
   function now() {
@@ -15189,7 +15189,7 @@ var element = $('#b353b9ea-dbc9-44c4-ab42-1724e8ad2520');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("4282");
+    var el = document.getElementById("1001");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -15265,9 +15265,9 @@ var element = $('#b353b9ea-dbc9-44c4-ab42-1724e8ad2520');
       console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
       document.head.appendChild(element);
     }
-  };var element = document.getElementById("4282");
+  };var element = document.getElementById("1001");
   if (element == null) {
-    console.error("Bokeh: ERROR: autoload.js configured with elementid '4282' but no matching script tag was found. ")
+    console.error("Bokeh: ERROR: autoload.js configured with elementid '1001' but no matching script tag was found. ")
     return false;
   }
 
@@ -15304,7 +15304,7 @@ var element = $('#b353b9ea-dbc9-44c4-ab42-1724e8ad2520');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("4282")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("1001")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -15331,7 +15331,7 @@ var element = $('#b353b9ea-dbc9-44c4-ab42-1724e8ad2520');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/ProgramDebt1415_1516PP.csv&#39;</span><span class="p">,</span><span class="n">na_values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PrivacySuppressed&#39;</span><span class="p">])</span>
@@ -15345,22 +15345,7 @@ var element = $('#b353b9ea-dbc9-44c4-ab42-1724e8ad2520');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">meanDebt</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;CIPDESC&#39;</span><span class="p">)[</span><span class="s1">&#39;DEBTMEAN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">meanDebt</span> <span class="o">=</span> <span class="n">meanDebt</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;DEBTMEAN&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">cipdesc</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;CIPDESC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># plot the largest n disciplines</span>
@@ -15390,91 +15375,22 @@ var element = $('#b353b9ea-dbc9-44c4-ab42-1724e8ad2520');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[79]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="display: table;"><div style="display: table-row;"><div style="display: table-cell;"><b title="bokeh.models.renderers.GlyphRenderer">GlyphRenderer</b>(</div><div style="display: table-cell;">id&nbsp;=&nbsp;'13409', <span id="13412" style="cursor: pointer;">&hellip;)</span></div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">data_source&nbsp;=&nbsp;ColumnDataSource(id='13405', ...),</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">glyph&nbsp;=&nbsp;VBar(id='13407', ...),</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">hover_glyph&nbsp;=&nbsp;None,</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">js_event_callbacks&nbsp;=&nbsp;{},</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">js_property_callbacks&nbsp;=&nbsp;{},</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">level&nbsp;=&nbsp;'glyph',</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">muted&nbsp;=&nbsp;False,</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">muted_glyph&nbsp;=&nbsp;None,</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">name&nbsp;=&nbsp;None,</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">nonselection_glyph&nbsp;=&nbsp;VBar(id='13408', ...),</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">selection_glyph&nbsp;=&nbsp;None,</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">subscribed_events&nbsp;=&nbsp;[],</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">tags&nbsp;=&nbsp;[],</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">view&nbsp;=&nbsp;CDSView(id='13410', ...),</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">visible&nbsp;=&nbsp;True,</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">x_range_name&nbsp;=&nbsp;'default',</div></div><div class="13411" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">y_range_name&nbsp;=&nbsp;'default')</div></div></div>
-<script>
-(function() {
-  var expanded = false;
-  var ellipsis = document.getElementById("13412");
-  ellipsis.addEventListener("click", function() {
-    var rows = document.getElementsByClassName("13411");
-    for (var i = 0; i < rows.length; i++) {
-      var el = rows[i];
-      el.style.display = expanded ? "none" : "table-row";
-    }
-    ellipsis.innerHTML = expanded ? "&hellip;)" : "&lsaquo;&lsaquo;&lsaquo;";
-    expanded = !expanded;
-  });
-})();
-</script>
-
-</div>
-
-</div>
-
-<div class="output_area">
-
 <div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-17a7a7dac4d4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> n <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">30</span> <span class="ansi-red-fg"># plot the largest n disciplines</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>p <span class="ansi-blue-fg">=</span> figure<span class="ansi-blue-fg">(</span>x_range<span class="ansi-blue-fg">=</span>meanDebt<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;CIPDESC&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>head<span class="ansi-blue-fg">(</span>n<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>title<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;Top {} Disciplines By Their Average Student Debt in 2015/16 &#34;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>n<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> p<span class="ansi-blue-fg">.</span>vbar<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;CIPDESC&#39;</span><span class="ansi-blue-fg">,</span> top<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;DEBTMEAN&#39;</span><span class="ansi-blue-fg">,</span> source<span class="ansi-blue-fg">=</span>meanDebt<span class="ansi-blue-fg">.</span>head<span class="ansi-blue-fg">(</span>n<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> width<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0.7</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> 
+<span class="ansi-green-intense-fg ansi-bold">      5</span> p<span class="ansi-blue-fg">.</span>xaxis<span class="ansi-blue-fg">.</span>major_label_orientation <span class="ansi-blue-fg">=</span>  math<span class="ansi-blue-fg">.</span>pi<span class="ansi-blue-fg">/</span><span class="ansi-cyan-fg">3</span>
 
-<div class="output_html rendered_html output_subarea ">
-
-
-
-
-
-
-  <div class="bk-root" id="015b7aa9-692e-43b9-a134-44d163d2c301" data-root-id="13372"></div>
-
+<span class="ansi-red-fg">NameError</span>: name &#39;meanDebt&#39; is not defined</pre>
 </div>
-
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="e5e60e49-e84d-424b-be40-a7ce4fadfa2d"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#e5e60e49-e84d-424b-be40-a7ce4fadfa2d');
-(function(root) {
-  function embed_document(root) {
-    
-  var docs_json = {"27d28cb4-d17e-4452-8813-0cbfdd426bcb":{"roots":{"references":[{"attributes":{"below":[{"id":"13383","type":"CategoricalAxis"}],"center":[{"id":"13386","type":"Grid"},{"id":"13391","type":"Grid"}],"left":[{"id":"13387","type":"LinearAxis"}],"min_border_left":80,"renderers":[{"id":"13409","type":"GlyphRenderer"}],"title":{"id":"13373","type":"Title"},"toolbar":{"id":"13398","type":"Toolbar"},"x_range":{"id":"13375","type":"FactorRange"},"x_scale":{"id":"13379","type":"CategoricalScale"},"y_range":{"id":"13377","type":"DataRange1d"},"y_scale":{"id":"13381","type":"LinearScale"}},"id":"13372","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"13379","type":"CategoricalScale"},{"attributes":{"formatter":{"id":"13758","type":"CategoricalTickFormatter"},"major_label_orientation":1.0471975511965976,"ticker":{"id":"13384","type":"CategoricalTicker"}},"id":"13383","type":"CategoricalAxis"},{"attributes":{"source":{"id":"13405","type":"ColumnDataSource"}},"id":"13410","type":"CDSView"},{"attributes":{},"id":"13388","type":"BasicTicker"},{"attributes":{},"id":"13396","type":"ResetTool"},{"attributes":{"callback":null,"data":{"CIPDESC":["Osteopathic Medicine/Osteopathy.","Dentistry.","Podiatric Medicine/Podiatry.","Advanced/Graduate Dentistry and Oral Sciences.","Chiropractic.","Veterinary Medicine.","Dental Residency Programs.","Medicine.","Optometry.","Law.","Pharmacy, Pharmaceutical Sciences, and Administration.","Medical Clinical Sciences/Graduate Medical Studies.","Alternative and Complementary Medicine and Medical Systems.","Bioethics/Medical Ethics.","Legal Research and Advanced Professional Studies.","Real Estate Development.","Dispute Resolution.","Alternative and Complementary Medical Support Services.","Rehabilitation and Therapeutic Professions.","Clinical, Counseling and Applied Psychology.","Veterinary Biomedical and Clinical Sciences.","Psychology, Other.","Publishing.","Legal Professions and Studies, Other.","Movement and Mind-Body Therapies and Education.","Social and Philosophical Foundations of Education.","Historic Preservation and Conservation.","Student Counseling and Personnel Services.","Architecture.","Theological and Ministerial Studies."],"DEBTMEAN":{"__ndarray__":"UrgehRvBC0HTNE3TTIUKQauqqqqSAQlBjC666EBaBkF3d3d3T4wEQZHPusFkdARBq6qqqpJRA0HOgUQrnC4DQTEMwzBs4gJB2zesff/a+kDnh0XKUMr5QKuqqqqq0vVAoeGk7rug9UAAAAAACPzzQAAAAABAMfFAVVVVVYUN8UDNzMzMvHnuQAAAAADoBO5ADw8PD1817UD7YWQzQZ7rQKuqqqp6DedAzczMzDiK5kCrqqqqmmTmQNIgDdIgUuZAAAAAAMAE5kCSJEmSpILlQNu2bdu2QuVA0W2qx/gN5UBq2G6Wx4vkQJzo6dx+R+RA","dtype":"float64","shape":[30]},"index":[269,109,291,2,65,352,107,236,268,206,280,234,17,42,208,308,112,16,311,71,351,299,305,207,248,326,180,335,30,346]},"selected":{"id":"13762","type":"Selection"},"selection_policy":{"id":"13761","type":"UnionRenderers"}},"id":"13405","type":"ColumnDataSource"},{"attributes":{"formatter":{"id":"13414","type":"NumeralTickFormatter"},"ticker":{"id":"13388","type":"BasicTicker"}},"id":"13387","type":"LinearAxis"},{"attributes":{"band_fill_alpha":0.1,"band_fill_color":"navy","dimension":1,"minor_grid_line_alpha":0.05,"minor_grid_line_color":"navy","ticker":{"id":"13388","type":"BasicTicker"}},"id":"13391","type":"Grid"},{"attributes":{},"id":"13381","type":"LinearScale"},{"attributes":{"format":"$000,."},"id":"13414","type":"NumeralTickFormatter"},{"attributes":{},"id":"13397","type":"HelpTool"},{"attributes":{"callback":null},"id":"13377","type":"DataRange1d"},{"attributes":{},"id":"13758","type":"CategoricalTickFormatter"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"13760","type":"BoxAnnotation"},{"attributes":{},"id":"13392","type":"PanTool"},{"attributes":{},"id":"13384","type":"CategoricalTicker"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"DEBTMEAN"},"width":{"value":0.7},"x":{"field":"CIPDESC"}},"id":"13407","type":"VBar"},{"attributes":{"callback":null,"factors":["Osteopathic Medicine/Osteopathy.","Dentistry.","Podiatric Medicine/Podiatry.","Advanced/Graduate Dentistry and Oral Sciences.","Chiropractic.","Veterinary Medicine.","Dental Residency Programs.","Medicine.","Optometry.","Law.","Pharmacy, Pharmaceutical Sciences, and Administration.","Medical Clinical Sciences/Graduate Medical Studies.","Alternative and Complementary Medicine and Medical Systems.","Bioethics/Medical Ethics.","Legal Research and Advanced Professional Studies.","Real Estate Development.","Dispute Resolution.","Alternative and Complementary Medical Support Services.","Rehabilitation and Therapeutic Professions.","Clinical, Counseling and Applied Psychology.","Veterinary Biomedical and Clinical Sciences.","Psychology, Other.","Publishing.","Legal Professions and Studies, Other.","Movement and Mind-Body Therapies and Education.","Social and Philosophical Foundations of Education.","Historic Preservation and Conservation.","Student Counseling and Personnel Services.","Architecture.","Theological and Ministerial Studies."]},"id":"13375","type":"FactorRange"},{"attributes":{"text":"Top 30 Disciplines By Their Average Student Debt in 2015/16 "},"id":"13373","type":"Title"},{"attributes":{},"id":"13393","type":"WheelZoomTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"13392","type":"PanTool"},{"id":"13393","type":"WheelZoomTool"},{"id":"13394","type":"BoxZoomTool"},{"id":"13395","type":"SaveTool"},{"id":"13396","type":"ResetTool"},{"id":"13397","type":"HelpTool"}]},"id":"13398","type":"Toolbar"},{"attributes":{"ticker":{"id":"13384","type":"CategoricalTicker"}},"id":"13386","type":"Grid"},{"attributes":{},"id":"13762","type":"Selection"},{"attributes":{},"id":"13761","type":"UnionRenderers"},{"attributes":{"overlay":{"id":"13760","type":"BoxAnnotation"}},"id":"13394","type":"BoxZoomTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"DEBTMEAN"},"width":{"value":0.7},"x":{"field":"CIPDESC"}},"id":"13408","type":"VBar"},{"attributes":{},"id":"13395","type":"SaveTool"},{"attributes":{"data_source":{"id":"13405","type":"ColumnDataSource"},"glyph":{"id":"13407","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"13408","type":"VBar"},"selection_glyph":null,"view":{"id":"13410","type":"CDSView"}},"id":"13409","type":"GlyphRenderer"}],"root_ids":["13372"]},"title":"Bokeh Application","version":"1.2.0"}};
-  var render_items = [{"docid":"27d28cb4-d17e-4452-8813-0cbfdd426bcb","roots":{"13372":"015b7aa9-692e-43b9-a134-44d163d2c301"}}];
-  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
-
-  }
-  if (root.Bokeh !== undefined) {
-    embed_document(root);
-  } else {
-    var attempts = 0;
-    var timer = setInterval(function(root) {
-      if (root.Bokeh !== undefined) {
-        embed_document(root);
-        clearInterval(timer);
-      }
-      attempts++;
-      if (attempts > 100) {
-        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
-        clearInterval(timer);
-      }
-    }, 10, root)
-  }
-})(window);
-</script>
-</div>
-
 </div>
 
 </div>
@@ -15483,7 +15399,7 @@ var element = $('#e5e60e49-e84d-424b-be40-a7ce4fadfa2d');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/ProgramDebt1516_1617PP.csv&#39;</span><span class="p">,</span><span class="n">na_values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PrivacySuppressed&#39;</span><span class="p">])</span>
@@ -15501,7 +15417,7 @@ var element = $('#e5e60e49-e84d-424b-be40-a7ce4fadfa2d');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># plot the largest n disciplines</span>
@@ -15522,102 +15438,6 @@ var element = $('#e5e60e49-e84d-424b-be40-a7ce4fadfa2d');
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[81]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="display: table;"><div style="display: table-row;"><div style="display: table-cell;"><b title="bokeh.models.renderers.GlyphRenderer">GlyphRenderer</b>(</div><div style="display: table-cell;">id&nbsp;=&nbsp;'13842', <span id="13845" style="cursor: pointer;">&hellip;)</span></div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">data_source&nbsp;=&nbsp;ColumnDataSource(id='13838', ...),</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">glyph&nbsp;=&nbsp;VBar(id='13840', ...),</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">hover_glyph&nbsp;=&nbsp;None,</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">js_event_callbacks&nbsp;=&nbsp;{},</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">js_property_callbacks&nbsp;=&nbsp;{},</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">level&nbsp;=&nbsp;'glyph',</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">muted&nbsp;=&nbsp;False,</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">muted_glyph&nbsp;=&nbsp;None,</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">name&nbsp;=&nbsp;None,</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">nonselection_glyph&nbsp;=&nbsp;VBar(id='13841', ...),</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">selection_glyph&nbsp;=&nbsp;None,</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">subscribed_events&nbsp;=&nbsp;[],</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">tags&nbsp;=&nbsp;[],</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">view&nbsp;=&nbsp;CDSView(id='13843', ...),</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">visible&nbsp;=&nbsp;True,</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">x_range_name&nbsp;=&nbsp;'default',</div></div><div class="13844" style="display: none;"><div style="display: table-cell;"></div><div style="display: table-cell;">y_range_name&nbsp;=&nbsp;'default')</div></div></div>
-<script>
-(function() {
-  var expanded = false;
-  var ellipsis = document.getElementById("13845");
-  ellipsis.addEventListener("click", function() {
-    var rows = document.getElementsByClassName("13844");
-    for (var i = 0; i < rows.length; i++) {
-      var el = rows[i];
-      el.style.display = expanded ? "none" : "table-row";
-    }
-    ellipsis.innerHTML = expanded ? "&hellip;)" : "&lsaquo;&lsaquo;&lsaquo;";
-    expanded = !expanded;
-  });
-})();
-</script>
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-
-
-
-
-
-  <div class="bk-root" id="97ed54a2-fb2d-447d-a904-0dbfc2199203" data-root-id="13805"></div>
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="9c934c18-8d58-4c69-b5b0-39155821ae4f"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#9c934c18-8d58-4c69-b5b0-39155821ae4f');
-(function(root) {
-  function embed_document(root) {
-    
-  var docs_json = {"cc52824f-75a5-4e87-84b9-1425b0cd5b8c":{"roots":{"references":[{"attributes":{"below":[{"id":"13816","type":"CategoricalAxis"}],"center":[{"id":"13819","type":"Grid"},{"id":"13824","type":"Grid"}],"left":[{"id":"13820","type":"LinearAxis"}],"min_border_left":80,"renderers":[{"id":"13842","type":"GlyphRenderer"}],"title":{"id":"13806","type":"Title"},"toolbar":{"id":"13831","type":"Toolbar"},"x_range":{"id":"13808","type":"FactorRange"},"x_scale":{"id":"13812","type":"CategoricalScale"},"y_range":{"id":"13810","type":"DataRange1d"},"y_scale":{"id":"13814","type":"LinearScale"}},"id":"13805","subtype":"Figure","type":"Plot"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"DEBTMEAN"},"width":{"value":0.7},"x":{"field":"CIPDESC"}},"id":"13840","type":"VBar"},{"attributes":{"source":{"id":"13838","type":"ColumnDataSource"}},"id":"13843","type":"CDSView"},{"attributes":{},"id":"14201","type":"UnionRenderers"},{"attributes":{"formatter":{"id":"14198","type":"CategoricalTickFormatter"},"major_label_orientation":1.0471975511965976,"ticker":{"id":"13817","type":"CategoricalTicker"}},"id":"13816","type":"CategoricalAxis"},{"attributes":{"data_source":{"id":"13838","type":"ColumnDataSource"},"glyph":{"id":"13840","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"13841","type":"VBar"},"selection_glyph":null,"view":{"id":"13843","type":"CDSView"}},"id":"13842","type":"GlyphRenderer"},{"attributes":{"band_fill_alpha":0.1,"band_fill_color":"navy","dimension":1,"minor_grid_line_alpha":0.05,"minor_grid_line_color":"navy","ticker":{"id":"13821","type":"BasicTicker"}},"id":"13824","type":"Grid"},{"attributes":{},"id":"13830","type":"HelpTool"},{"attributes":{"format":"$000,."},"id":"13847","type":"NumeralTickFormatter"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"DEBTMEAN"},"width":{"value":0.7},"x":{"field":"CIPDESC"}},"id":"13841","type":"VBar"},{"attributes":{},"id":"13829","type":"ResetTool"},{"attributes":{"callback":null,"factors":["Osteopathic Medicine/Osteopathy.","Dentistry.","Podiatric Medicine/Podiatry.","Advanced/Graduate Dentistry and Oral Sciences.","Chiropractic.","Dental Residency Programs.","Veterinary Medicine.","Medicine.","Optometry.","Law.","Pharmacy, Pharmaceutical Sciences, and Administration.","Medical Clinical Sciences/Graduate Medical Studies.","Alternative and Complementary Medicine and Medical Systems.","Bioethics/Medical Ethics.","Real Estate Development.","Legal Research and Advanced Professional Studies.","Dispute Resolution.","Alternative and Complementary Medical Support Services.","Rehabilitation and Therapeutic Professions.","Clinical, Counseling and Applied Psychology.","Molecular Medicine.","Veterinary Biomedical and Clinical Sciences.","Architectural Sciences and Technology.","Social and Philosophical Foundations of Education.","Historic Preservation and Conservation.","Psychology, Other.","Philosophy and Religious Studies, Other.","Movement and Mind-Body Therapies and Education.","Legal Professions and Studies, Other.","Publishing."]},"id":"13808","type":"FactorRange"},{"attributes":{"text":"Top 30 Disciplines By Their Average Student Debt in 2016/17 "},"id":"13806","type":"Title"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"14200","type":"BoxAnnotation"},{"attributes":{"callback":null,"data":{"CIPDESC":["Osteopathic Medicine/Osteopathy.","Dentistry.","Podiatric Medicine/Podiatry.","Advanced/Graduate Dentistry and Oral Sciences.","Chiropractic.","Dental Residency Programs.","Veterinary Medicine.","Medicine.","Optometry.","Law.","Pharmacy, Pharmaceutical Sciences, and Administration.","Medical Clinical Sciences/Graduate Medical Studies.","Alternative and Complementary Medicine and Medical Systems.","Bioethics/Medical Ethics.","Real Estate Development.","Legal Research and Advanced Professional Studies.","Dispute Resolution.","Alternative and Complementary Medical Support Services.","Rehabilitation and Therapeutic Professions.","Clinical, Counseling and Applied Psychology.","Molecular Medicine.","Veterinary Biomedical and Clinical Sciences.","Architectural Sciences and Technology.","Social and Philosophical Foundations of Education.","Historic Preservation and Conservation.","Psychology, Other.","Philosophy and Religious Studies, Other.","Movement and Mind-Body Therapies and Education.","Legal Professions and Studies, Other.","Publishing."],"DEBTMEAN":{"__ndarray__":"TGgvoR3eDEG1tLS0UsILQTmO4zimbglBq6qqqqLlBkEAAAAAJD8FQVVVVVW9NQVBVVVVVTmvBEG3bdu2VfUDQcMwDMOQ7ANBzUkgLkSi+kCmTIJdBWr6QJqZmZmZRfZAD8y1AyOX9UCO4ziOs7n0QLdt27YNU/JAiZ9R4qeB8UCJiIiIKM/vQFVVVVV1G+9ALhZIanlm7kBNblah9PfrQAAAAABAcOpA0UUXXXSU6UBJkiRJyt/nQImIiIhIgedAF1100QUF50Crqqqq6sTmQNu2bdvWSOZAAAAAAFCF5UD2KFyPUoPlQJqZmZm5cOVA","dtype":"float64","shape":[30]},"index":[272,109,295,2,65,107,357,236,271,206,284,234,17,42,312,208,112,16,315,71,249,356,28,331,180,303,286,250,207,309]},"selected":{"id":"14202","type":"Selection"},"selection_policy":{"id":"14201","type":"UnionRenderers"}},"id":"13838","type":"ColumnDataSource"},{"attributes":{},"id":"14198","type":"CategoricalTickFormatter"},{"attributes":{},"id":"13828","type":"SaveTool"},{"attributes":{},"id":"13812","type":"CategoricalScale"},{"attributes":{"overlay":{"id":"14200","type":"BoxAnnotation"}},"id":"13827","type":"BoxZoomTool"},{"attributes":{},"id":"13814","type":"LinearScale"},{"attributes":{"callback":null},"id":"13810","type":"DataRange1d"},{"attributes":{"formatter":{"id":"13847","type":"NumeralTickFormatter"},"ticker":{"id":"13821","type":"BasicTicker"}},"id":"13820","type":"LinearAxis"},{"attributes":{},"id":"13821","type":"BasicTicker"},{"attributes":{},"id":"13825","type":"PanTool"},{"attributes":{"ticker":{"id":"13817","type":"CategoricalTicker"}},"id":"13819","type":"Grid"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"13825","type":"PanTool"},{"id":"13826","type":"WheelZoomTool"},{"id":"13827","type":"BoxZoomTool"},{"id":"13828","type":"SaveTool"},{"id":"13829","type":"ResetTool"},{"id":"13830","type":"HelpTool"}]},"id":"13831","type":"Toolbar"},{"attributes":{},"id":"13817","type":"CategoricalTicker"},{"attributes":{},"id":"13826","type":"WheelZoomTool"},{"attributes":{},"id":"14202","type":"Selection"}],"root_ids":["13805"]},"title":"Bokeh Application","version":"1.2.0"}};
-  var render_items = [{"docid":"cc52824f-75a5-4e87-84b9-1425b0cd5b8c","roots":{"13805":"97ed54a2-fb2d-447d-a904-0dbfc2199203"}}];
-  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
-
-  }
-  if (root.Bokeh !== undefined) {
-    embed_document(root);
-  } else {
-    var attempts = 0;
-    var timer = setInterval(function(root) {
-      if (root.Bokeh !== undefined) {
-        embed_document(root);
-        clearInterval(timer);
-      }
-      attempts++;
-      if (attempts > 100) {
-        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
-        clearInterval(timer);
-      }
-    }, 10, root)
-  }
-})(window);
-</script>
-</div>
-
-</div>
-
 </div>
 </div>
 

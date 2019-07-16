@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[44]:
+# In[1]:
 
 
 import pandas as pd
@@ -12,22 +12,14 @@ import math
 output_notebook()
 
 
-# In[77]:
+# In[2]:
 
 
 df = pd.read_csv('data/ProgramDebt1415_1516PP.csv',na_values = ['PrivacySuppressed'])
 df = df[pd.notnull(df['DEBTMEAN'])]
 
 
-# In[78]:
-
-
-meanDebt = df.groupby('CIPDESC')['DEBTMEAN'].mean().reset_index()
-meanDebt = meanDebt.sort_values('DEBTMEAN',ascending=False)
-cipdesc=df['CIPDESC'].unique()
-
-
-# In[79]:
+# In[3]:
 
 
 n = 30 # plot the largest n disciplines
@@ -47,7 +39,7 @@ p.min_border_left = 80
 show(p)
 
 
-# In[80]:
+# In[ ]:
 
 
 df = pd.read_csv('data/ProgramDebt1516_1617PP.csv',na_values = ['PrivacySuppressed'])
@@ -58,7 +50,7 @@ meanDebt = meanDebt.sort_values('DEBTMEAN',ascending=False)
 cipdesc=df['CIPDESC'].unique()
 
 
-# In[81]:
+# In[ ]:
 
 
 n = 30 # plot the largest n disciplines
