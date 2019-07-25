@@ -1,22 +1,24 @@
 
 # coding: utf-8
 
-# In[201]:
+# In[1]:
 
 
 import pandas as pd
 from bokeh.io import show, output_file,output_notebook
-from bokeh.models import NumeralTickFormatter
+from bokeh.models import NumeralTickFormatter,ColorBar,LinearColorMapper,BasicTicker,HoverTool
 from bokeh.plotting import figure, show
 import bokeh.palettes
 from bokeh.transform import linear_cmap
+from bokeh.tile_providers import get_provider, Vendors
+
 
 import math
 from pyproj import Proj, transform
 output_notebook()
 
 
-# In[205]:
+# In[2]:
 
 
 df = pd.read_csv('data/ProgramDebt1415_1516PP.csv',na_values = ['PrivacySuppressed'])
@@ -30,7 +32,7 @@ uni["OPEID"]=uni["OPEID"].str[:-2] #drop the last two digits which code for bran
 df["radius"]=(df["COUNT"]/df["COUNT"].mean())*1000
 
 
-# In[206]:
+# In[3]:
 
 
 df = df.merge(uni,on="OPEID")
@@ -38,26 +40,33 @@ df = df.merge(uni,on="OPEID")
 df["LONGITUD"],df["LATITUDE"] = transform(Proj(init='epsg:4326'), Proj(init='epsg:3857'), df["LONGITUD"].tolist(),df["LATITUDE"].tolist())
 
 
-# In[211]:
+# In[4]:
 
 
-from bokeh.tile_providers import get_provider, Vendors
-
+output_file("InteractiveGeographicChart.html")
 tile_provider = get_provider(Vendors.CARTODBPOSITRON)
+
+hover = HoverTool(tooltips=[
+    ("index", "$index"),
+    ("Institute","@NAME"),
+    ("Course","@CIPDESC"),
+    ("Mean Debt US$", "@DEBTMEAN"),
+    ("Count","@COUNT")
+])
 
 # range bounds supplied in web mercator coordinates
 p = figure(x_range=(-13868734, -7502569), y_range=(3214024, 6467184),
-           x_axis_type="mercator", y_axis_type="mercator",plot_width=1200,plot_height=800)
+           x_axis_type="mercator", y_axis_type="mercator",plot_width=1200,plot_height=800,tools=[hover])
 p.add_tile(tile_provider)
-mapper = linear_cmap(field_name="DEBTMEAN", palette='Plasma256' ,low=df["DEBTMEAN"].quantile(q=0.25) ,high=df["DEBTMEAN"].quantile(0.75))
 
-p.circle(x="LONGITUD", y="LATITUDE",line_color=mapper ,radius="radius", fill_color=mapper, fill_alpha=0.8, source=df)
+mapper = LinearColorMapper(palette='RdBu11', low=df["DEBTMEAN"].quantile(q=0.25) ,high=df["DEBTMEAN"].quantile(0.75))
 
+
+p.circle(x="LONGITUD", y="LATITUDE",line_color={'field': 'DEBTMEAN', 'transform': mapper} ,radius="radius", fill_color={'field': 'DEBTMEAN', 'transform': mapper}, fill_alpha=0.8, source=df)
+
+color_bar = ColorBar(color_mapper=mapper,ticker=BasicTicker(desired_num_ticks=11),
+                     label_standoff=12, border_line_color=None, location=(0,0))
+
+p.add_layout(color_bar, 'right')
 show(p)
-
-
-# In[209]:
-
-
-df["DEBTMEAN"].quartile()
 
