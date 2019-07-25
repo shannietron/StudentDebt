@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[9]:
 
 
 import pandas as pd
@@ -18,7 +18,7 @@ from pyproj import Proj, transform
 output_notebook()
 
 
-# In[2]:
+# In[22]:
 
 
 df = pd.read_csv('data/ProgramDebt1415_1516PP.csv',na_values = ['PrivacySuppressed'])
@@ -29,10 +29,10 @@ uni = pd.read_csv('data/hd2017.csv',encoding = "ISO-8859-1")
 df['OPEID'] = df['OPEID'].apply(str)
 df["OPEID"]=df["OPEID"].apply('{0:0>6}'.format) #pad leading zeros to make 6 digits
 uni["OPEID"]=uni["OPEID"].str[:-2] #drop the last two digits which code for branch locations
-df["radius"]=(df["COUNT"]/df["COUNT"].mean())*1000
+df["radius"]=(df["COUNT"]/df["COUNT"].max())*100
 
 
-# In[3]:
+# In[23]:
 
 
 df = df.merge(uni,on="OPEID")
@@ -40,7 +40,7 @@ df = df.merge(uni,on="OPEID")
 df["LONGITUD"],df["LATITUDE"] = transform(Proj(init='epsg:4326'), Proj(init='epsg:3857'), df["LONGITUD"].tolist(),df["LATITUDE"].tolist())
 
 
-# In[20]:
+# In[24]:
 
 
 output_file("InteractiveGeographicChart.html")
@@ -64,7 +64,7 @@ p.add_tile(tile_provider)
 mapper = LinearColorMapper(palette='RdBu11', low=df["DEBTMEAN"].quantile(q=0.25) ,high=df["DEBTMEAN"].quantile(0.75))
 
 
-p.circle(x="LONGITUD", y="LATITUDE",line_color={'field': 'DEBTMEAN', 'transform': mapper} ,radius="radius", fill_color={'field': 'DEBTMEAN', 'transform': mapper}, fill_alpha=0.8, source=df)
+p.circle(x="LONGITUD", y="LATITUDE",line_color={'field': 'DEBTMEAN', 'transform': mapper} ,size="radius", fill_color={'field': 'DEBTMEAN', 'transform': mapper}, fill_alpha=0.8, source=df)
 
 color_bar = ColorBar(color_mapper=mapper,ticker=BasicTicker(desired_num_ticks=11),
                      label_standoff=12, border_line_color=None, location=(0,0))
