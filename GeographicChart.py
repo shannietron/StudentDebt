@@ -40,7 +40,7 @@ df = df.merge(uni,on="OPEID")
 df["LONGITUD"],df["LATITUDE"] = transform(Proj(init='epsg:4326'), Proj(init='epsg:3857'), df["LONGITUD"].tolist(),df["LATITUDE"].tolist())
 
 
-# In[4]:
+# In[20]:
 
 
 output_file("InteractiveGeographicChart.html")
@@ -48,7 +48,8 @@ tile_provider = get_provider(Vendors.CARTODBPOSITRON)
 
 hover = HoverTool(tooltips=[
     ("index", "$index"),
-    ("Institute","@NAME"),
+    ("Institute","@INSTNM"),
+    ("State","@STABBR"),
     ("Course","@CIPDESC"),
     ("Mean Debt US$", "@DEBTMEAN"),
     ("Count","@COUNT")
@@ -56,7 +57,8 @@ hover = HoverTool(tooltips=[
 
 # range bounds supplied in web mercator coordinates
 p = figure(x_range=(-13868734, -7502569), y_range=(3214024, 6467184),
-           x_axis_type="mercator", y_axis_type="mercator",plot_width=1200,plot_height=800,tools=[hover])
+           x_axis_type="mercator", y_axis_type="mercator",plot_width=1200,plot_height=800)
+p.tools.append(hover)
 p.add_tile(tile_provider)
 
 mapper = LinearColorMapper(palette='RdBu11', low=df["DEBTMEAN"].quantile(q=0.25) ,high=df["DEBTMEAN"].quantile(0.75))
@@ -69,4 +71,10 @@ color_bar = ColorBar(color_mapper=mapper,ticker=BasicTicker(desired_num_ticks=11
 
 p.add_layout(color_bar, 'right')
 show(p)
+
+
+# In[5]:
+
+
+df.iloc[75157]
 
